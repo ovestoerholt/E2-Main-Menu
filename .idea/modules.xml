@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/E2-Main-Menu.iml" filepath="$PROJECT_DIR$/E2-Main-Menu.iml" />
       <module fileurl="file://$PROJECT_DIR$/HovedMeny/HovedMeny.iml" filepath="$PROJECT_DIR$/HovedMeny/HovedMeny.iml" />
       <module fileurl="file://$PROJECT_DIR$/HovedMenyProject.iml" filepath="$PROJECT_DIR$/HovedMenyProject.iml" />
     </modules>
