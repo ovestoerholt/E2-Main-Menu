@@ -20,13 +20,13 @@ public class MainActivity extends AbstractNavDrawerActivity {
         protected NavDrawerActivityConfiguration getNavDrawerConfiguration() {
 
             NavDrawerItem[] menu = new NavDrawerItem[] {
-                    NavMenuSection.create( 100, "Demos"),
-                    NavMenuItem.create(101,"List/Detail (Fragment)", "navdrawer_friends", false, this),
-                    NavMenuItem.create(102, "Fragment Rune", "navdrawer_airport", true, this),
-                    NavMenuSection.create(200, "General"),
-                    NavMenuItem.create(202, "Rate this app", "navdrawer_rating", false, this),
-                    NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
-                    NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
+                    NavMenuSection.create( 100, "Meg"),
+                    NavMenuItem.create(101,"Status", "navdrawer_friends", false, this),
+                    NavMenuItem.create(102, "Mine mål", "navdrawer_airport", true, this),
+                    NavMenuSection.create(200, "Konfigurasjon"),
+                    NavMenuItem.create(202, "Det som trigger meg", "navdrawer_rating", false, this)};//,
+                    //NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
+                    //NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
 
             NavDrawerActivityConfiguration navDrawerActivityConfiguration = new NavDrawerActivityConfiguration();
             navDrawerActivityConfiguration.setMainLayout(R.layout.activity_main);
@@ -55,6 +55,9 @@ public class MainActivity extends AbstractNavDrawerActivity {
                     break;
                 case 102:
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentRune()).commit();
+                    break;
+                case 202:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyTriggers()).commit();
                     break;
             }
         }
