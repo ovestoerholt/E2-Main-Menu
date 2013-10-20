@@ -22,7 +22,7 @@ public class MainActivity extends AbstractNavDrawerActivity {
             NavDrawerItem[] menu = new NavDrawerItem[] {
                     NavMenuSection.create( 100, "Demos"),
                     NavMenuItem.create(101,"List/Detail (Fragment)", "navdrawer_friends", false, this),
-                    NavMenuItem.create(102, "Fragment Rune", "navdrawer_airport", true, this),
+                    NavMenuItem.create(102, "Mine mål", "navdrawer_airport", true, this),
                     NavMenuSection.create(200, "General"),
                     NavMenuItem.create(202, "Rate this app", "navdrawer_rating", false, this),
                     NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
