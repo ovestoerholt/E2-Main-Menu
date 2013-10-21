@@ -1,9 +1,9 @@
 package no.inforte.android.hovedmeny;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
 import android.widget.Toast;
 
 public class MainActivity extends AbstractNavDrawerActivity {
@@ -58,6 +58,19 @@ public class MainActivity extends AbstractNavDrawerActivity {
                     break;
                 case 202:
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyTriggers()).commit();
+
+                    /*
+                    FragmentManager fragmentManager = getFragmentManager();
+                            //getSupportFragmentManager();
+
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                    FragmentMyTriggers fragment = new FragmentMyTriggers();
+                    fragmentTransaction.replace(R.id.content_frame, fragment);
+                    fragmentTransaction.commit();
+                    */
+
                     break;
             }
         }

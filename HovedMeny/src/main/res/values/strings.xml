@@ -8,4 +8,19 @@
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+<!--
+    <string-array
+        name="string_array_name">
+        <item>text_string</item>
+    </string-array>
+-->
+    <string-array name="mytriggers">
+        <item>Glad</item>
+        <item>Sint</item>
+        <item>Blid</item>
+        <item>Sterk</item>
+        <item>Frisk</item>
+        <item>Vanskelig</item>
+    </string-array>
 </resources>
