@@ -4,15 +4,28 @@ import android.content.Context;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AbstractNavDrawerActivity {
+        private boolean bShowNewButton;
 
-        @Override
+    public boolean isbShowNewButton() {
+        return bShowNewButton;
+    }
+
+    public void setbShowNewButton(boolean bShowNewButton) {
+        this.bShowNewButton = bShowNewButton;
+    }
+
+    @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             if ( savedInstanceState == null ) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
+
+                bShowNewButton = false;
+                invalidateOptionsMenu();
             }
         }
 
@@ -54,8 +67,17 @@ public class MainActivity extends AbstractNavDrawerActivity {
                     //getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FriendMainFragment()).commit();
                     break;
                 case 102:
+                    bShowNewButton=true;
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentRune()).commit();
                     break;
             }
         }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        MenuItem miNew = menu.findItem(R.id.action_new);
+        miNew.setVisible(bShowNewButton);
+        return super.onCreateOptionsMenu(menu);
+    }
 }
