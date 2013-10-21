@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="e2blue_light">#74d2f7</color>
+    <color name="e2blue_middle">#09afee</color>
+    <color name="e2blue_dark">#03719b</color>
     <color name="purple_light">#a276eb</color>
     <color name="purple_middle">#8658ce</color>
     <color name="purple_dark">#6a3ab2</color>
