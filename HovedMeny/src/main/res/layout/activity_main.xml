@@ -13,9 +13,9 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/e2blue_dark"
+        android:background="@color/e2blue_middle"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/darker_gray"
+        android:divider="@color/e2blue_dark"
         android:dividerHeight="0.1dp"
         android:listSelector="@drawable/navdrawer_listselector"/>
 

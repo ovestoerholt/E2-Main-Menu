@@ -6,14 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentRune extends Fragment {
+public class FragmentMyStatus extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View mainView = inflater
-                .inflate(R.layout.fragment_rune, container, false);
+                .inflate(R.layout.fragment_mystatus, container, false);
 
 
         return mainView;

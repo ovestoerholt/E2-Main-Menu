@@ -16,7 +16,11 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:activatedBackgroundIndicator">@drawable/listitem_background</item>
+        <item name="android:actionBarStyle">@style/E2ActionBar</item>
+    </style>
 
+    <style name="E2ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/e2blue_light</item>
     </style>
 
 </resources>
