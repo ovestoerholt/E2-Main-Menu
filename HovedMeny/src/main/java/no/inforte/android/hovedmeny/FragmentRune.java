@@ -1,21 +1,18 @@
 package no.inforte.android.hovedmeny;
 
+import android.support.v4.app.ListFragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-public class FragmentRune extends Fragment {
+public class FragmentRune extends ListFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        String[] values = new String[] { "Vekt", "Energi", "Fysisk form"};
 
-        View mainView = inflater
-                .inflate(R.layout.fragment_rune, container, false);
+        GoalListArrayAdapter goalListAdapter = new GoalListArrayAdapter(getActivity(),values);
+        setListAdapter(goalListAdapter);
 
-
-        return mainView;
+        getActivity().invalidateOptionsMenu();
     }
 }
