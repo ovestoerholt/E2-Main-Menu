@@ -1,18 +1,15 @@
 package no.inforte.android.hovedmeny;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.Toast;
 
 public class MainActivity extends AbstractNavDrawerActivity {
+        boolean bShowNewButton;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             if ( savedInstanceState == null ) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyGoals()).commit();
 
                 bShowNewButton = false;
                 invalidateOptionsMenu();
@@ -24,10 +21,10 @@ public class MainActivity extends AbstractNavDrawerActivity {
 
             NavDrawerItem[] menu = new NavDrawerItem[] {
                     NavMenuSection.create( 100, "Meg"),
-                    NavMenuItem.create(101,"Status", "navdrawer_friends", false, this),
-                    NavMenuItem.create(102, "Mine mål", "navdrawer_airport", true, this),
+                    NavMenuItem.create(101,"Mine tiltak", "navdrawer_star", false, this),
+                    NavMenuItem.create(102, "Mine mål", "navdrawer_heart", true, this),
                     NavMenuSection.create(200, "Konfigurasjon"),
-                    NavMenuItem.create(202, "Det som trigger meg", "navdrawer_rating", false, this)};//,
+                    NavMenuItem.create(202, "Det som trigger meg", "navdrawer_grin", false, this)};//,
                     //NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
                     //NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
 
@@ -48,32 +45,13 @@ public class MainActivity extends AbstractNavDrawerActivity {
         protected void onNavItemSelected(int id) {
             switch ((int)id) {
                 case 101:
-                    Context context = getApplicationContext();
-                    CharSequence text = "Hello toast!";
-                    int duration = Toast.LENGTH_SHORT;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                    //getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FriendMainFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyActions()).commit();
                     break;
                 case 102:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentRune()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyGoals()).commit();
                     break;
                 case 202:
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyTriggers()).commit();
-
-                    /*
-                    FragmentManager fragmentManager = getFragmentManager();
-                            //getSupportFragmentManager();
-
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
-                    FragmentMyTriggers fragment = new FragmentMyTriggers();
-                    fragmentTransaction.replace(R.id.content_frame, fragment);
-                    fragmentTransaction.commit();
-                    */
-
                     break;
             }
         }

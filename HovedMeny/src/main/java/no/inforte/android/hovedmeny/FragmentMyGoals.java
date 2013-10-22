@@ -1,34 +1,18 @@
 package no.inforte.android.hovedmeny;
 
-import android.app.Activity;
+import android.support.v4.app.ListFragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-public class FragmentMyGoals extends Fragment {
+public class FragmentMyGoals extends ListFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        String[] values = new String[] { "Vekt", "Energi", "Fysisk form"};
 
-        View mainView = inflater.inflate(R.layout.fragment_mygoals, container, false);
+        GoalListArrayAdapter goalListAdapter = new GoalListArrayAdapter(getActivity(),values);
+        setListAdapter(goalListAdapter);
 
-
-        Activity activity = getActivity();
-
-        ListView listView1 = (ListView) mainView.findViewById(R.id.listViewMyGoals);
-
-        String[] items = getResources().getStringArray(R.array.mygoals);
-
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
-        ArrayAdapter<String> adapter = new ArrayAdapter(activity, android.R.layout.simple_list_item_1, items);
-        //listView1.setAdapter(new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, items));
-
-        listView1.setAdapter(adapter);
-        return mainView;
+        getActivity().invalidateOptionsMenu();
     }
 }
