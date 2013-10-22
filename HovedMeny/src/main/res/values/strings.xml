@@ -9,4 +9,20 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_new">Ny</string>
+ 
+    <string-array
+        name="mygoals">
+        <item>Ikke snope</item>
+        <item>Følge tallerkenmodellen</item>
+        <item>30 min spasertur hver dag</item>
+    </string-array>
+
+    <string-array name="mytriggers">
+        <item>Glad</item>
+        <item>Sint</item>
+        <item>Blid</item>
+        <item>Sterk</item>
+        <item>Frisk</item>
+        <item>Vanskelig</item>
+    </string-array>
 </resources>

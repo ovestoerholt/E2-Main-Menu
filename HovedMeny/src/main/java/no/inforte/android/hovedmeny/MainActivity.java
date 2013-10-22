@@ -1,24 +1,14 @@
 package no.inforte.android.hovedmeny;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AbstractNavDrawerActivity {
-        private boolean bShowNewButton;
 
-    public boolean isbShowNewButton() {
-        return bShowNewButton;
-    }
-
-    public void setbShowNewButton(boolean bShowNewButton) {
-        this.bShowNewButton = bShowNewButton;
-    }
-
-    @Override
+        @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             if ( savedInstanceState == null ) {
@@ -33,13 +23,13 @@ public class MainActivity extends AbstractNavDrawerActivity {
         protected NavDrawerActivityConfiguration getNavDrawerConfiguration() {
 
             NavDrawerItem[] menu = new NavDrawerItem[] {
-                    NavMenuSection.create( 100, "Demos"),
-                    NavMenuItem.create(101,"List/Detail (Fragment)", "navdrawer_friends", false, this),
+                    NavMenuSection.create( 100, "Meg"),
+                    NavMenuItem.create(101,"Status", "navdrawer_friends", false, this),
                     NavMenuItem.create(102, "Mine mål", "navdrawer_airport", true, this),
-                    NavMenuSection.create(200, "General"),
-                    NavMenuItem.create(202, "Rate this app", "navdrawer_rating", false, this),
-                    NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
-                    NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
+                    NavMenuSection.create(200, "Konfigurasjon"),
+                    NavMenuItem.create(202, "Det som trigger meg", "navdrawer_rating", false, this)};//,
+                    //NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
+                    //NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
 
             NavDrawerActivityConfiguration navDrawerActivityConfiguration = new NavDrawerActivityConfiguration();
             navDrawerActivityConfiguration.setMainLayout(R.layout.activity_main);
@@ -67,17 +57,24 @@ public class MainActivity extends AbstractNavDrawerActivity {
                     //getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FriendMainFragment()).commit();
                     break;
                 case 102:
-                    bShowNewButton=true;
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentRune()).commit();
+                    break;
+                case 202:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new FragmentMyTriggers()).commit();
+
+                    /*
+                    FragmentManager fragmentManager = getFragmentManager();
+                            //getSupportFragmentManager();
+
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    //FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                    FragmentMyTriggers fragment = new FragmentMyTriggers();
+                    fragmentTransaction.replace(R.id.content_frame, fragment);
+                    fragmentTransaction.commit();
+                    */
+
                     break;
             }
         }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        MenuItem miNew = menu.findItem(R.id.action_new);
-        miNew.setVisible(bShowNewButton);
-        return super.onCreateOptionsMenu(menu);
-    }
 }
