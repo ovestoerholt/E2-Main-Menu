@@ -21,14 +21,13 @@ public class FragmentMyTriggers extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View mainView = inflater.inflate(R.layout.fragment_mytriggers, container, false);
 
         Activity activity = getActivity();
 
-        ListView listView1 = (ListView) activity.findViewById(R.id.listViewMyTriggers);
+        ListView listView1 = (ListView) mainView.findViewById(R.id.listViewMyTriggers);
 
         String[] items = getResources().getStringArray(R.array.mytriggers);
 
