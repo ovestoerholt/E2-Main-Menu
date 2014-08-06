@@ -9,7 +9,13 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_new">Ny</string>
- 
+    <string name="navdrawer_measures">Mine tiltak</string>
+    <string name="navdrawer_goals">Mine mål</string>
+    <string name="navdrawer_configuration">Konfigurasjon</string>
+    <string name="navdrawer_triggers">Det som trigger meg</string>
+    <string name="navdrawer_eula">Eula</string>
+    <string name="navdrawer_quit">Quit</string>
+
     <string-array
         name="mygoals">
         <item>Ikke snope</item>
