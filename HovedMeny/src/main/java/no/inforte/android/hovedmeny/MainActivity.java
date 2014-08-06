@@ -19,6 +19,7 @@ public class MainActivity extends AbstractNavDrawerActivity {
         @Override
         protected NavDrawerActivityConfiguration getNavDrawerConfiguration() {
 
+            /*
             NavDrawerItem[] menu = new NavDrawerItem[] {
                     NavMenuSection.create( 100, "Meg"),
                     NavMenuItem.create(101,"Mine tiltak", "navdrawer_star", false, this),
@@ -27,6 +28,15 @@ public class MainActivity extends AbstractNavDrawerActivity {
                     NavMenuItem.create(202, "Det som trigger meg", "navdrawer_grin", false, this)};//,
                     //NavMenuItem.create(203, "Eula", "navdrawer_eula", false, this),
                     //NavMenuItem.create(204, "Quit", "navdrawer_quit", false, this)};
+            */
+
+            NavDrawerItem[] menu = new NavDrawerItem[] {
+                    NavMenuSection.create( 100, "Meg"),
+                    NavMenuItem.create(101, getString(R.string.navdrawer_measures), "navdrawer_star", false, this),
+                    NavMenuItem.create(102, getString(R.string.nawdrawer_goals), "navdrawer_heart", true, this),
+                    NavMenuSection.create(200, getString(R.string.nawdrawer_settings)),
+                    NavMenuItem.create(202, getString(R.string.nawdrawer_triggers), "navdrawer_grin", false, this)
+            };
 
             NavDrawerActivityConfiguration navDrawerActivityConfiguration = new NavDrawerActivityConfiguration();
             navDrawerActivityConfiguration.setMainLayout(R.layout.activity_main);
